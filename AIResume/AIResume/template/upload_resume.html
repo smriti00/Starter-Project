@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Matcher</title>
+</head>
+<body>
+    <h1>Upload Resume</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Matched Resumes</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Job</th>
+            <th>Score</th>
+        </tr>
+        {% for resume in resumes %}
+        <tr>
+            <td>{{ resume.name }}</td>
+            <td>{{ resume.job.title }}</td>
+            <td>{{ resume.match_score|floatformat:2 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

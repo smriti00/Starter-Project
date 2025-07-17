@@ -1,0 +1,16 @@
+Django>=4.2
+djangorestframework
+python-dotenv
+PyPDF2
+python-docx
+textract
+tika
+nltk
+spacy
+sentence-transformers
+scikit-learn
+openai
+django-cleanup
+pandas
+django-filter
+django-cors-headers
